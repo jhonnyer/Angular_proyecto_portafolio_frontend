@@ -1,0 +1,244 @@
+/* Fuentes letra personalizadas custom */
+@font-face {
+    font-family: "yanone";
+    src: url('../css/fonts/yanone.ttf');
+}
+
+@font-face {
+    font-family: "finger";
+    src: url('../css/fonts/finger.ttf');
+}
+
+/* Aspectos generales para todos los elementos * */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: "yanone", Arial, Helvetica;
+    font-size: 20px;
+    background: url("../img/pattern.png");
+    background-attachment: fixed; /*que el fondo se quede fijo */
+}
+
+/* limpiar flotadores en el navegador  */
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+/* Barra de navegacion o header nav  */
+header{
+    display: block;
+    width: 100%;
+    height: 60px;
+    background: rgba(53,103,160,0.7);
+    position: fixed; /*Barra de navegacion siempre quede en la parte superior*/
+    text-transform: uppercase;/* todos los textos en mayuscula  */
+}
+
+header ul{
+    display: block;
+    width: 40%;
+    height: inherit; /*Heredado de la clase padre*/
+    margin: 0px auto;
+    margin-top: -3px;
+}
+
+header ul li{
+    display: inline-block;/* para que se ponga cada elemento al lado del otro  */
+    margin: 0px auto;
+    text-align: center;
+    line-height: 70px;
+    height: inherit;
+}   
+
+header a{
+    display: block;
+    padding-right: 15px;
+    padding-left: 15px;
+    height: inherit;
+    text-decoration: none;
+    color: white;
+    transition: all 300ms; /*transicion cada que se haga hover en cada elemento*/
+}
+
+/* .actived permite resaltar el elemento seleccionado en el menu de la cabecera header  */
+header a:hover,
+    .actived{
+    background: rgba(0,0,0,0.6);
+    height: inherit;
+    margin: 0px auto;
+    display: block;
+}
+
+header #logo a:hover{
+    background: transparent;
+    color: black;
+    transform: scale(1.50,1.50);
+}
+
+/* logotipo maquetacion */
+#logo{
+    font-family: "finger";
+    font-size: 30px;    
+}
+
+#logo a{
+    transition: color 400ms, transform 500ms;
+}
+
+/* Contenedor principal  */
+#content{
+    min-height: 600px;
+    height: auto;
+    width: 75%;
+    margin: 0px auto; /*Elemento centrado*/
+    box-shadow: 0px 0px 40px black;
+    background: rgba(255,255, 255, 0.7);
+    border-left: 1px solid #b7b7b7;
+    padding-top: 120px;
+}
+
+/* PIE DE PAGINA  */
+footer{
+    width: 75%;
+    margin: 0px auto;
+    padding-top: 15px;
+    color: rgba(0,0,0,0.6);
+}
+
+/* Estilos globales del container  */
+.container{
+    padding: 50px;
+    padding-top: 10px;
+}
+
+/* Contenedor con imagen  */
+.container .image{
+    float: left;
+    width: 49%;
+}
+
+/* Contenedor con imagen  */
+.container .image img{
+    width: 100%;
+}
+
+/* contenedor con datos e imagen  */
+.container .data{
+    float: left;
+    width: 47%;
+    margin-left: 30px;
+}
+
+.container h2{
+    display: block;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Estilos para un formulario  */
+form{
+    width: 80%;
+}
+
+form label{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form textarea{
+    width: 40%;
+    padding: 5px;
+}
+
+form button,
+form input[type="submit"],
+.buttom-edit,
+.buttom-delete{
+    display: block;
+    font-size: 17px;
+    padding: 5px;
+    margin-top: 15px;
+    color:white;
+    background: rgba(53, 103, 164,1);
+    border: 1px solid rgba(13, 67, 133, 1);
+    cursor:pointer;
+}
+
+/* Botones de eliminar y editar  */
+.buttom-edit,
+.buttom-delete{
+    width:35%;
+    text-align: center;
+    float: left;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.buttom-edit{
+    background: orange;
+    border: none;
+}
+
+.buttom-delete{
+    background: red;
+    border: none;
+}
+
+form button:hover,
+form input[type="submit"]:hover{
+    background: rgba(53, 103, 164,0.8);
+    border: 1px solid rgba(13, 67, 133, 1);
+    cursor:pointer;
+}
+
+/* css del boton enviar cuando esta en modo disabled  */
+form input[disabled]{
+    opacity: 0.4;
+    cursor: not-allowed! important; /*no permitido mientras el formulario no ha sido validado*/
+}
+
+/* Clase form_error cuando el formulario no es validado  */
+.form_error{
+    font-size: 13px;
+    padding: 3px;
+    background: red;
+    color: white;
+    margin-left: 13px;
+}
+
+.message{
+    padding: 5px;
+    border:1px solid #eee;
+    width: 50%;
+}
+
+.success{
+    background: green;
+    color:white;
+}
+
+.success a{
+    color: white;
+}
+
+.failed{
+    background: red;
+    color: white;
+}
+
+/* Clase de confirmacion de mensajes de alerta */
+.confirm{
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+    color: red;
+}

@@ -1,0 +1,27 @@
+<!-- se verifica primero si el proyecto existe  -->
+<div class="container" *ngIf="project">
+    <!-- compruebo si la imagen existe  -->
+    <div class="image" *ngIf="project.image">
+        <!-- {{url+'get-image/'+project.image}} ruta de la imagen; ngIf solo muestra si la imagen existe  -->
+        <!-- <img src="{{url+'get-image/'+project.image}}" *ngIf="project.image"> -->
+        <img src="{{'api/get-image/'+project.image}}" *ngIf="project.image">
+
+    </div>
+    <div class="data">
+        <h1>{{project.name}}</h1>
+        <h3>{{project.descripcion}}</h3>
+        <p>{{project.categoria}}</p>
+        <p>{{project.lenguajes}}</p>
+
+        <p *ngIf="confirm==false"> 
+            <a [routerLink]="['/editar-proyecto',project._id]" class="buttom-edit">Editar</a>
+            <a (click)="deleteConfirm(true)" class="buttom-delete">Eliminar</a>
+        </p>
+        <p *ngIf="confirm==true"> 
+            <span class="confirm">¿Estás seguro que quieres eliminar este proyecto?</span>
+            <br>
+            <a (click)="deleteConfirm(false)" class="buttom-edit">Cancelar</a>
+            <a (click)="deleteProject(project._id)" class="buttom-delete">Eliminar definitivamente</a>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Contacto</h1>
+
+    <!-- #textos se utilizara para mostrar o utilziar todo el contenido de un elemento  -->
+    <div id="texto" #text>
+        <!-- appResaltado es la directiva personalizada creada para cambiar el color del texto  -->
+        <p [hidden]="false" appResaltado>Esta es la pagina de contacto, puedes enviarnos cualquier inquietud que tengas</p>
+    </div>
+
+    <!-- Slider  -->
+    <p>Tamaño del slider</p>
+    <input type="number" [(ngModel)]="widthSlider">
+    <button (click)="cargarSlider()">Cargar slider</button>
+    <button (click)="resetearSlider()">Resetear slider</button>
+    <!-- verifica que exista el dato anchuraToSlider en el input  -->
+    <div *ngIf="anchuraToSlider"> 
+    <!-- <div> -->
+        <!-- Contacto componente padre  -->
+        <!-- paso el tamaño ingresado por el input al componente app-slider, parametro anchura=widthSlider -->
+        <app-slider [anchura]="anchuraToSlider"
+                    [etiquetas]="captions"
+                    (conseguirAutor)="getAutor($event)">
+        </app-slider>
+    </div>
+    <div *ngIf="autor">
+        <!-- {{autor.nombre}} -->
+        {{autor.nombre+". Sitio web: "+autor.website}}
+    </div>
+    
+</div>
